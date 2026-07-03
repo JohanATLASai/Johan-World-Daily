@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Johan World Daily">
-  <title>Johan World Daily</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Johan World Daily">
+<title>Johan World Daily</title>
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   body {
-        margin: 0;
+    margin: 0;
     font-family: Georgia, 'Times New Roman', serif;
     background: #f7f5f0;
-        color: #1a1a1a;
-}
+    color: #1a1a1a;
+  }
   .masthead {
-        border-bottom: 4px double #1a1a1a;
+    border-bottom: 4px double #1a1a1a;
     padding: 18px 24px 10px;
     text-align: center;
-}
+  }
   .masthead h1 {
-        font-family: 'Times New Roman', serif;
+    font-family: 'Times New Roman', serif;
     font-size: 42px;
     letter-spacing: 2px;
     margin: 0;
     text-transform: uppercase;
-}
+  }
   .masthead .sub {
     display: flex;
     justify-content: space-between;
@@ -40,12 +40,12 @@
     gap: 6px;
   }
   .toolbar {
-        display: flex;
+    display: flex;
     justify-content: center;
     gap: 10px;
     padding: 10px;
     background: #ece8de;
-        border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -53,7 +53,7 @@
     font-family: inherit;
     background: #1a1a1a;
     color: #f7f5f0;
-        border: none;
+    border: none;
     padding: 8px 16px;
     font-size: 13px;
     letter-spacing: 1px;
@@ -63,72 +63,72 @@
   button.refresh:hover { background: #333; }
   .status { font-size: 12px; color: #555; }
   .layout {
-        max-width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
     columns: 2 340px;
     column-gap: 28px;
-}
+  }
   .section {
-        break-inside: avoid;
+    break-inside: avoid;
     margin-bottom: 26px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
-      }
+  }
   .section h2 {
-          font-size: 13px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 2px solid #1a1a1a;
     padding-bottom: 4px;
     margin-bottom: 10px;
-}
+  }
   .article { margin-bottom: 10px; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
   .article:last-child { border-bottom: none; }
   .article-head {
-        cursor: pointer;
+    cursor: pointer;
     display: flex;
     align-items: baseline;
     gap: 6px;
-}
+  }
   .article-head:hover h3 { text-decoration: underline; }
   .caret {
-        font-size: 12px;
+    font-size: 12px;
     color: #888;
     transition: transform 0.15s ease;
     flex-shrink: 0;
-}
+  }
   .article.open .caret { transform: rotate(90deg); }
   .article h3 {
-        font-size: 18px;
+    font-size: 18px;
     margin: 0 0 4px;
     line-height: 1.25;
-}
+  }
   .article p {
-        font-size: 14px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0 0 6px;
     color: #222;
-}
+  }
   .article .src {
     font-size: 11px;
     color: #777;
     font-style: italic;
   }
   .detail {
-        display: none;
+    display: none;
     padding-left: 16px;
     border-left: 2px solid #ddd6c4;
     margin-top: 6px;
-}
+  }
   .article.open .detail { display: block; }
   .flag {
-        display: inline-block;
+    display: inline-block;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     background: #ddd6c4;
-        color: #5c4d1f;
+    color: #5c4d1f;
     padding: 1px 6px;
     border-radius: 2px;
     margin-left: 6px;
@@ -138,49 +138,50 @@
     font-size: 12px;
     color: #666;
     background: #efece2;
-        padding: 8px 10px;
+    padding: 8px 10px;
     border-left: 3px solid #999;
   }
 </style>
-  </head>
-  <body>
+</head>
+<body>
 
-  <div class="masthead">
-    <h1>Johan World Daily</h1>
+<div class="masthead">
+  <h1>Johan World Daily</h1>
   <div class="sub">
     <span id="dateline">Friday, July 3, 2026 — Personal Edition for Johan</span>
     <span id="lastUpdated">Last refreshed: 2026-07-03, late afternoon</span>
-    </div>
   </div>
+</div>
 
-  <div class="toolbar">
-    <button class="refresh" id="refreshBtn">Reload page</button>
-    <span class="status" id="statusText">Click a headline to expand it in place. Updated automatically every morning.</span>
-  </div>
+<div class="toolbar">
+  <button class="refresh" id="claudeRefreshBtn">Ask Claude to refresh</button>
+  <button class="refresh" id="reloadBtn" style="background-color:#8a8375;">Reload page</button>
+  <span class="status" id="statusText">Click a headline to expand it in place. "Ask Claude to refresh" opens Claude Desktop with a refresh request ready to send (Mac only for now).</span>
+</div>
 
-  <div class="layout">
+<div class="layout">
 
-    <div class="section">
-      <h2>World &amp; Geopolitics</h2>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3>Gulf tensions ease "for now" after Israel-Iran exchange</h3></div>
+  <div class="section">
+    <h2>World &amp; Geopolitics</h2>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>Gulf tensions ease "for now" after Israel-Iran exchange</h3></div>
       <div class="detail">
         <p>Israel and Iran exchanged missile strikes before both sides said they would halt attacks "for now." The Strait of Hormuz standoff is structural — rooted in the underlying regional rivalry rather than this one exchange — so analysts don't expect it resolved by a pause alone.</p>
-          <p class="src">Source: World Economic Forum, Geopolitical Monitor</p>
-        </div>
+        <p class="src">Source: World Economic Forum, Geopolitical Monitor</p>
       </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3>Putin-Xi talks reaffirm Russia-China alignment</h3></div>
-        <div class="detail">
-          <p>Meetings between Putin and Xi underscored the durability of their partnership and a shared push toward a more multipolar order. Myanmar is emerging as a fresh arena of China-India competition, shown by dueling state visits from both countries.</p>
-          <p class="src">Source: Geopolitical Futures</p>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>Putin-Xi talks reaffirm Russia-China alignment</h3></div>
+      <div class="detail">
+        <p>Meetings between Putin and Xi underscored the durability of their partnership and a shared push toward a more multipolar order. Myanmar is emerging as a fresh arena of China-India competition, shown by dueling state visits from both countries.</p>
+        <p class="src">Source: Geopolitical Futures</p>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>EU-China tensions rise over industrial overcapacity</h3></div>
-        <div class="detail">
-          <p>Europe is confronting fallout from Chinese overcapacity in EVs, wind components, solar, and semiconductors, straining an already fragmented EU political response. It's one of several forces — alongside a Middle East truce and energy-driven inflation — shaping geopolitical risk this quarter.</p>
-          <p class="src">Source: Lazard Research</p>
+      <div class="detail">
+        <p>Europe is confronting fallout from Chinese overcapacity in EVs, wind components, solar, and semiconductors, straining an already fragmented EU political response. It's one of several forces — alongside a Middle East truce and energy-driven inflation — shaping geopolitical risk this quarter.</p>
+        <p class="src">Source: Lazard Research</p>
       </div>
     </div>
   </div>
@@ -189,172 +190,175 @@
     <h2>Ukraine War</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Ukraine launches largest drone strike of the war on Moscow</h3></div>
-        <div class="detail">
-          <p>Ukraine hit the Dubna satellite communications center and further damaged an oil refinery struck two days earlier. Seventeen people were injured and hundreds of flights were suspended at Moscow airports. Separately, the EU released a further $4.44bn tranche of its $101bn loan program for Ukrainian drone technology.</p>
-          <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
-        </div>
-      </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Overnight strike on Kyiv kills 20, damages 30+ sites</h3></div>
-        <div class="detail">
-          <p>A Russian air attack overnight damaged more than 30 sites in Kyiv, killing at least 20 people and injuring 90 more, with further strikes in Poltava and Dnipropetrovsk oblasts. Ukrainian drones hit back at the Lukoil refinery in Kstovo and a railway bridge near Stanytsia Luhanska. European officials read the intensified bombing as a sign Russia is struggling militarily and economically, not a sign of strength.</p>
+      <div class="detail">
+        <p>Ukraine hit the Dubna satellite communications center and further damaged an oil refinery struck two days earlier. Seventeen people were injured and hundreds of flights were suspended at Moscow airports. Separately, the EU released a further $4.44bn tranche of its $101bn loan program for Ukrainian drone technology.</p>
         <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
-        </div>
-      </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Front nearly stalemated; casualty ratio now ~8:1 against Russia</h3></div>
-        <div class="detail">
-          <p>Russia's ground advance has slowed to some of the lowest rates of any war in the past century — roughly 50m/day near Kostiantynivka, 70m/day near Pokrovsk, 90m/day near Sloviansk. Russian monthly casualties (30,000+) now likely exceed its recruitment (about 27,000/month), pushing the casualty ratio to near 8:1 against Russia in H1 2026. Ukrainian forces raised a flag over the Kinburn Spit for the first time since March 2022.</p>
-          <p class="src">Source: CSIS, CFR Global Conflict Tracker</p>
       </div>
     </div>
     <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3>ISW: Russian summer offensive underperforming</h3></div>
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Overnight strike on Kyiv kills 20, damages 30+ sites</h3></div>
+      <div class="detail">
+        <p>A Russian air attack overnight damaged more than 30 sites in Kyiv, killing at least 20 people and injuring 90 more, with further strikes in Poltava and Dnipropetrovsk oblasts. Ukrainian drones hit back at the Lukoil refinery in Kstovo and a railway bridge near Stanytsia Luhanska. European officials read the intensified bombing as a sign Russia is struggling militarily and economically, not a sign of strength.</p>
+        <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Front nearly stalemated; casualty ratio now ~8:1 against Russia</h3></div>
+      <div class="detail">
+        <p>Russia's ground advance has slowed to some of the lowest rates of any war in the past century — roughly 50m/day near Kostiantynivka, 70m/day near Pokrovsk, 90m/day near Sloviansk. Russian monthly casualties (30,000+) now likely exceed its recruitment (about 27,000/month), pushing the casualty ratio to near 8:1 against Russia in H1 2026. Ukrainian forces raised a flag over the Kinburn Spit for the first time since March 2022.</p>
+        <p class="src">Source: CSIS, CFR Global Conflict Tracker</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>ISW: Russian summer offensive underperforming</h3></div>
       <div class="detail">
         <p>The Institute for the Study of War assesses that Russia's spring-summer 2026 offensive has failed to achieve operationally significant gains, with June's rate of advance a fraction of June 2025's — consistent with the stalled-front picture above.</p>
-          <p class="src">Source: Institute for the Study of War</p>
-        </div>
+        <p class="src">Source: Institute for the Study of War</p>
       </div>
-      <p class="note">Sourced from wire services and ISW's daily assessments — chosen over partisan commentary for the strongest track record on this conflict.</p>
     </div>
+    <p class="note">Sourced from wire services and ISW's daily assessments — chosen over partisan commentary for the strongest track record on this conflict.</p>
+  </div>
 
-    <div class="section">
-      <h2>Markets &amp; Finance</h2>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Dow hits record on strong session before the holiday</h3></div>
+  <div class="section">
+    <h2>Markets &amp; Finance</h2>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Dow hits record on strong session before the holiday</h3></div>
       <div class="detail">
         <p>The Dow rose 539 points (+1.03%) to 52,844 on July 2, led by Apple, McDonald's and Disney. The Nasdaq 100 slipped 0.8% on chip-valuation worries — Micron -7%, Applied Materials -7.4%, AMD -4.3% — as investors questioned whether AI optimism has pushed chip valuations too far. Europe rallied on healthcare and financials; Asia rallied too.</p>
-          <p class="src">Source: CNBC, Saxo Bank Market Quick Take</p>
+        <p class="src">Source: CNBC, Saxo Bank Market Quick Take</p>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>June jobs report shows a softening US labor market</h3></div>
       <div class="detail">
         <p>Payrolls rose just 57,000, well below the 113,000 forecast. Unemployment actually fell to 4.2%, but mainly because 720,000 people left the labor force rather than because hiring picked up — a distinction that matters for reading the headline rate.</p>
-          <p class="src">Source: Saxo Bank Market Quick Take</p>
-        </div>
-      </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3>US markets closed today for July 4 observance</h3></div>
-        <div class="detail">
-          <p>NYSE and Nasdaq are closed July 3 (July 4 falls on a Saturday this year, observed the preceding Friday). Trading resumes Monday, July 6.</p>
-        </div>
-      </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">no live feed yet</span><h3>Live Stockholm OMX / per-ticker data not connected</h3></div>
-        <div class="detail">
-          <p>Connect the FMP or MT Newswires connector to add live market data here. Both are third-party paid data vendors — connecting requires a subscription with them directly, separate from your Claude plan.</p>
-        </div>
+        <p class="src">Source: Saxo Bank Market Quick Take</p>
       </div>
     </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>US markets closed today for July 4 observance</h3></div>
+      <div class="detail">
+        <p>NYSE and Nasdaq are closed July 3 (July 4 falls on a Saturday this year, observed the preceding Friday). Trading resumes Monday, July 6.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">no live feed yet</span><h3>Live Stockholm OMX / per-ticker data not connected</h3></div>
+      <div class="detail">
+        <p>Connect the FMP or MT Newswires connector to add live market data here. Both are third-party paid data vendors — connecting requires a subscription with them directly, separate from your Claude plan.</p>
+      </div>
+    </div>
+  </div>
 
-    <div class="section">
-      <h2>Atlas Watch — Defense &amp; Test-Systems Sector</h2>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">no direct mention</span><h3>No public ATLAS Sweden AB mentions today</h3></div>
+  <div class="section">
+    <h2>Atlas Watch — Defense &amp; Test-Systems Sector</h2>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">no direct mention</span><h3>No public ATLAS Sweden AB mentions today</h3></div>
       <div class="detail">
         <p>Expected for a specialist/private firm — general search doesn't index most defense-industry trade coverage in real time. Showing adjacent Swedish defense-sector moves below instead.</p>
-        </div>
       </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sweden to negotiate purchase of four French frigates</h3></div>
-        <div class="detail">
-          <p>The government tasked FMV (the defense materiel administration) with starting negotiations to procure four frigates from France's Naval Group, for delivery between 2030 and 2034.</p>
-          <p class="src">Source: Defense News / Breaking Defense</p>
-        </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sweden to negotiate purchase of four French frigates</h3></div>
+      <div class="detail">
+        <p>The government tasked FMV (the defense materiel administration) with starting negotiations to procure four frigates from France's Naval Group, for delivery between 2030 and 2034.</p>
+        <p class="src">Source: Defense News / Breaking Defense</p>
       </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sweden approves $1.6bn territorial air defense program</h3></div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sweden approves $1.6bn territorial air defense program</h3></div>
       <div class="detail">
         <p>Short-range air defenses will be deployed to protect Swedish cities and critical infrastructure — a procurement wave adjacent to the test-management-systems space ATLAS operates in.</p>
-          <p class="src">Source: Army Recognition</p>
+        <p class="src">Source: Army Recognition</p>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>NATO names Östergötland site a DIANA accelerator</h3></div>
-        <div class="detail">
-          <p>The LEAD incubator in Östergötland was appointed an accelerator site in NATO's Defence Innovation Accelerator for the North Atlantic (DIANA) network — a funding and partnership route worth watching for Swedish defense-tech firms.</p>
-          <p class="src">Source: TURDEF</p>
-        </div>
+      <div class="detail">
+        <p>The LEAD incubator in Östergötland was appointed an accelerator site in NATO's Defence Innovation Accelerator for the North Atlantic (DIANA) network — a funding and partnership route worth watching for Swedish defense-tech firms.</p>
+        <p class="src">Source: TURDEF</p>
       </div>
     </div>
+  </div>
 
-    <div class="section">
-      <h2>Columnists</h2>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3><span class="columnist-name">Johan Hakelius</span> — Fokus</h3></div>
-        <div class="detail">
-          <p>Today's column takes a satirical angle on Sweden's new ban on cousin marriage (effective July 1), riffing on "ecosexuals" as what he frames as progressivism's next frontier.</p>
-          <p class="src">Source: Fokus (behind Fokus's own access)</p>
-        </div>
+  <div class="section">
+    <h2>Columnists</h2>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3><span class="columnist-name">Johan Hakelius</span> — Fokus</h3></div>
+      <div class="detail">
+        <p>Today's column takes a satirical angle on Sweden's new ban on cousin marriage (effective July 1), riffing on "ecosexuals" as what he frames as progressivism's next frontier.</p>
+        <p class="src">Source: Fokus (behind Fokus's own access)</p>
       </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><h3><span class="columnist-name">Jan Guillou</span> — Aftonbladet</h3></div>
-        <div class="detail">
-          <p>Latest column (14 juni) covers the fallout from Expressen's reporting on Vänsterpartiet's expelled local politicians. Guillou argues the "revelations" don't hold up under scrutiny — most of those named were never shown to support Hamas or espouse antisemitism — and that the party's mass expulsions reflect panic rather than a reasoned response.</p>
-          <p class="src">Source: Aftonbladet</p>
-        </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3><span class="columnist-name">Jan Guillou</span> — Aftonbladet</h3></div>
+      <div class="detail">
+        <p>Latest column (14 juni) covers the fallout from Expressen's reporting on Vänsterpartiet's expelled local politicians. Guillou argues the "revelations" don't hold up under scrutiny — most of those named were never shown to support Hamas or espouse antisemitism — and that the party's mass expulsions reflect panic rather than a reasoned response.</p>
+        <p class="src">Source: Aftonbladet</p>
       </div>
-      <div class="article">
-        <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Dan Korn</span> — Göteborgs-Posten</h3></div>
-        <div class="detail">
-          <p>Added to the watch list. No fresh piece surfaced in today's search — GP's archive index is lagging. Next refresh will check again.</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">PM Nilsson</span> — Dagens Industri</h3></div>
-                <div class="detail">
-                  <p>Added to the watch list. No fresh column surfaced today; he reportedly writes weekly (Thursdays).</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Alice Teodorescu Måwe</span> — GP / Expressen</h3></div>
-                <div class="detail">
-                  <p>Added to the watch list. No fresh piece surfaced in today's search; next refresh will check again.</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Nicolas Baverez</span> — Le Figaro (France)</h3></div>
-                <div class="detail">
-                  <p>Trial addition for geographic/political breadth: economically liberal columnist at Le Figaro. No specific July piece surfaced yet. Let me know what you think once you've read one.</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Bret Stephens</span> — New York Times (US)</h3></div>
-                <div class="detail">
-                  <p>Trial addition: conservative, Trump-skeptical columnist. Most recent found was "Trump's Titanic Insecurities Are Sinking Us" (June 18). Let me know what you think once you've read one.</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Arcadi Espada</span> — El Mundo (Spain)</h3></div>
-                <div class="detail">
-                  <p>Trial addition: liberal commentator, often critical across the political spectrum. Let me know what you think once you've read one.</p>
-                </div>
-              </div>
-              <div class="article">
-                <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Ruthie Blum</span> — Jerusalem Post (Israel)</h3></div>
-                <div class="detail">
-                  <p>Trial addition: conservative contributing editor. Let me know what you think once you've read one.</p>
-                </div>
-              </div>
-            </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Dan Korn</span> — Göteborgs-Posten</h3></div>
+      <div class="detail">
+        <p>Added to the watch list. No fresh piece surfaced in today's search — GP's archive index is lagging. Next refresh will check again.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">PM Nilsson</span> — Dagens Industri</h3></div>
+      <div class="detail">
+        <p>Added to the watch list. No fresh column surfaced today; he reportedly writes weekly (Thursdays).</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Alice Teodorescu Måwe</span> — GP / Expressen</h3></div>
+      <div class="detail">
+        <p>Added to the watch list. No fresh piece surfaced in today's search; next refresh will check again.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Nicolas Baverez</span> — Le Figaro (France)</h3></div>
+      <div class="detail">
+        <p>Trial addition for geographic/political breadth: economically liberal columnist at Le Figaro. No specific July piece surfaced yet. Let me know what you think once you've read one.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Bret Stephens</span> — New York Times (US)</h3></div>
+      <div class="detail">
+        <p>Trial addition: conservative, Trump-skeptical columnist. Most recent found was "Trump's Titanic Insecurities Are Sinking Us" (June 18). Let me know what you think once you've read one.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Arcadi Espada</span> — El Mundo (Spain)</h3></div>
+      <div class="detail">
+        <p>Trial addition: liberal commentator, often critical across the political spectrum. Let me know what you think once you've read one.</p>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Ruthie Blum</span> — Jerusalem Post (Israel)</h3></div>
+      <div class="detail">
+        <p>Trial addition: conservative contributing editor. Let me know what you think once you've read one.</p>
+      </div>
+    </div>
+  </div>
 
-            <div class="section">
-              <h2>Watchlist</h2>
-              <p class="note">Actively checking: Le Figaro, Le Monde, Libération · Svenska Dagbladet, Dagens Nyheter, Expressen, Aftonbladet · Financial Times, Washington Post, New York Times, USA Today, Wall Street Journal · El País, El Mundo · Haaretz, Jerusalem Post — plus other sources as needed. Original language kept for Swedish/French/Spanish/English; everything else translated to English.</p>
-            </div>
+  <div class="section">
+    <h2>Watchlist</h2>
+    <p class="note">Actively checking: Le Figaro, Le Monde, Libération · Svenska Dagbladet, Dagens Nyheter, Expressen, Aftonbladet · Financial Times, Washington Post, New York Times, USA Today, Wall Street Journal · El País, El Mundo · Haaretz, Jerusalem Post — plus other sources as needed. Original language kept for Swedish/French/Spanish/English; everything else translated to English.</p>
+  </div>
 
-          </div>
+</div>
 
-          <script>
-            document.getElementById('refreshBtn').addEventListener('click', () => location.reload());
+<script>
+  document.getElementById('reloadBtn').addEventListener('click', () => location.reload());
+  document.getElementById('claudeRefreshBtn').addEventListener('click', () => {
+    const prompt = "Please refresh Johan World Daily (my news dashboard) with the latest news and republish it to my GitHub Pages site JohanATLASai/Johan-World-Daily.";
+    window.location.href = 'claude://cowork/new?q=' + encodeURIComponent(prompt);
+  });
   document.querySelectorAll('.article-head').forEach(head => {
-        head.addEventListener('click', () => {
-          head.closest('.article').classList.toggle('open');
+    head.addEventListener('click', () => {
+      head.closest('.article').classList.toggle('open');
     });
-        });
-<</script>
+  });
+</script>
 
-  </body>
-  </html>
-  
+</body>
+</html>
