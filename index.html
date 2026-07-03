@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- redeploy retry 2026-07-03b -->
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -64,26 +62,56 @@
   }
   button.refresh:hover { background: #333; }
   .status { font-size: 12px; color: #555; }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px 14px 0;
+    background: #f7f5f0;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .tab-btn {
+    font-family: inherit;
+    background: none;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 8px 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #555;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+  }
+  .tab-btn:hover { background: #ece8de; color: #1a1a1a; }
+  .tab-btn.active {
+    background: #1a1a1a;
+    color: #f7f5f0;
+    border-color: #1a1a1a;
+  }
   .layout {
-    max-width: 1100px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 20px;
-    columns: 2 340px;
-    column-gap: 28px;
+    padding: 24px 20px 40px;
   }
   .section {
-    break-inside: avoid;
+    display: none;
     margin-bottom: 26px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
   }
+  .section.active { display: block; }
   .section h2 {
-    font-size: 13px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 2px solid #1a1a1a;
-    padding-bottom: 4px;
-    margin-bottom: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
   }
   .article { margin-bottom: 10px; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
   .article:last-child { border-bottom: none; }
@@ -154,6 +182,12 @@
     margin-top: 2px;
   }
   .readmore:hover { color: #555; border-color: #555; }
+  .byline {
+    font-size: 11px;
+    color: #888;
+    margin: 0 0 4px 22px;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -172,12 +206,22 @@
   <span class="status" id="statusText">Click a headline for a summary. Use "Read full article" inside for the complete piece. "Ask Claude to refresh" opens Claude Desktop (Mac only for now).</span>
 </div>
 
+<div class="tabs">
+  <button class="tab-btn active" data-tab="geo">World &amp; Geopolitics</button>
+  <button class="tab-btn" data-tab="ukraine">Ukraine War</button>
+  <button class="tab-btn" data-tab="markets">Markets &amp; Finance</button>
+  <button class="tab-btn" data-tab="atlas">Atlas Watch</button>
+  <button class="tab-btn" data-tab="columnists">Columnists</button>
+  <button class="tab-btn" data-tab="watchlist">Watchlist</button>
+</div>
+
 <div class="layout">
 
-  <div class="section">
+  <div class="section active" id="geo">
     <h2>World &amp; Geopolitics</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>«Nous sommes en deuil, mais nous restons debout» : l'Iran enterre l'ancien guide suprême</h3></div>
+      <div class="byline">Le Figaro</div>
       <div class="detail">
         <p>Iran a débuté samedi une semaine de funérailles nationales pour Ali Khamenei, tué le 28 février dans une frappe conjointe israélo-américaine qui a déclenché la guerre au Moyen-Orient. Le cortège traverse Téhéran, Qom et Machhad, où l'enterrement doit avoir lieu le 9 juillet ; les autorités attendent jusqu'à 20 millions de participants rien qu'à Téhéran, davantage qu'aux obsèques de Khomeiny en 1989.</p>
         <p class="src">Source: Le Figaro</p>
@@ -186,6 +230,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>La Russie prépare une attaque sur la Pologne pour «provoquer» l'Otan, selon les États-Unis</h3></div>
+      <div class="byline">Le Figaro</div>
       <div class="detail">
         <p>Washington avertit que Moscou planifierait une action contre la Pologne destinée à tester la réaction de l'Otan. En parallèle, la Lituanie souhaite intégrer la «dissuasion nucléaire» de l'Alliance face à la menace russe sur le flanc oriental.</p>
         <p class="src">Source: Le Figaro</p>
@@ -194,6 +239,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>Merz exhibe su apoyo a los países bálticos ante la amenaza rusa en el flanco oriental de la OTAN</h3></div>
+      <div class="byline">El País</div>
       <div class="detail">
         <p>El canciller alemán Friedrich Merz reforzó su respaldo a los estados bálticos frente a la presión rusa, en un gesto que se suma a las señales de Vilna y Varsovia sobre un flanco oriental cada vez más tenso.</p>
         <p class="src">Fuente: El País</p>
@@ -202,6 +248,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>Gulf tensions ease "for now" after Israel-Iran exchange</h3></div>
+      <div class="byline">World Economic Forum</div>
       <div class="detail">
         <p>Israel and Iran exchanged missile strikes before both sides said they would halt attacks "for now." The Strait of Hormuz standoff is structural — rooted in the underlying regional rivalry rather than this one exchange — so analysts don't expect it resolved by a pause alone.</p>
         <p class="src">Source: World Economic Forum, Geopolitical Monitor</p>
@@ -210,6 +257,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>Putin-Xi talks reaffirm Russia-China alignment</h3></div>
+      <div class="byline">Geopolitical Futures</div>
       <div class="detail">
         <p>Meetings between Putin and Xi underscored the durability of their partnership and a shared push toward a more multipolar order. Myanmar is emerging as a fresh arena of China-India competition, shown by dueling state visits from both countries.</p>
         <p class="src">Source: Geopolitical Futures</p>
@@ -218,6 +266,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>EU-China tensions rise over industrial overcapacity</h3></div>
+      <div class="byline">Lazard Research</div>
       <div class="detail">
         <p>Europe is confronting fallout from Chinese overcapacity in EVs, wind components, solar, and semiconductors, straining an already fragmented EU political response. It's one of several forces — alongside a Middle East truce and energy-driven inflation — shaping geopolitical risk this quarter.</p>
         <p class="src">Source: Lazard Research</p>
@@ -226,6 +275,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>'Political systems cannot sustain it': Turkish FM calls for sanctions on Israel</h3></div>
+      <div class="byline">Jerusalem Post</div>
       <div class="detail">
         <p>Turkey's foreign minister renewed calls for sanctions against Israel; Israeli minister Gideon Sa'ar retaliated sharply. It's the latest sign of an increasingly hostile Turkey-Israel relationship, part of a wider realignment across the region since the Iran war.</p>
         <p class="src">Source: Jerusalem Post</p>
@@ -234,6 +284,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>1,000 Days After Oct. 7, Israelis Keep Stepping Up While Their Politicians Don't</h3></div>
+      <div class="byline">Haaretz</div>
       <div class="detail">
         <p>Marking 1,000 days since October 7, protesters displayed photos of hostages killed since the massacre at sites across Israel, renewing calls for a state commission of inquiry into government failures — commentary on the gap between public civic energy and political accountability.</p>
         <p class="src">Source: Haaretz</p>
@@ -242,10 +293,11 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="ukraine">
     <h2>Ukraine War</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Au lendemain de l'attaque meurtrière de Kiev, l'ONU regrette que «les civils subissent davantage»</h3></div>
+      <div class="byline">Le Monde, Libération</div>
       <div class="detail">
         <p>Au moins 30 personnes ont été tuées à Kiev dans l'attaque menée par l'armée russe dans la nuit du 1er au 2 juillet — la plus massive depuis le début de la guerre selon le maire Vitali Klitschko. L'ONU déplore que les civils subissent toujours davantage de destructions ; Zelensky a qualifié l'attaque de délibérément dirigée contre des cibles civiles.</p>
         <p class="src">Sources : Le Monde, Libération</p>
@@ -254,6 +306,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>Moscú se ensaña de nuevo con Kiev con un ataque masivo de misiles y drones</h3></div>
+      <div class="byline">El Mundo</div>
       <div class="detail">
         <p>Un nuevo bombardeo masivo ruso sobre Kiev dejó al menos varias decenas de muertos, según el recuento citado por la prensa española, en la que ya se describe como una de las noches más duras para la capital ucraniana desde el inicio de la invasión.</p>
         <p class="src">Fuente: El Mundo</p>
@@ -262,6 +315,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Ukraine launches largest drone strike of the war on Moscow</h3></div>
+      <div class="byline">Washington Post, CFR</div>
       <div class="detail">
         <p>Ukraine hit the Dubna satellite communications center and further damaged an oil refinery struck two days earlier. Seventeen people were injured and hundreds of flights were suspended at Moscow airports. Separately, the EU released a further $4.44bn tranche of its $101bn loan program for Ukrainian drone technology.</p>
         <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
@@ -270,6 +324,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Overnight strike on Kyiv kills 20, damages 30+ sites</h3></div>
+      <div class="byline">Washington Post, CFR</div>
       <div class="detail">
         <p>A Russian air attack overnight damaged more than 30 sites in Kyiv, killing at least 20 people and injuring 90 more, with further strikes in Poltava and Dnipropetrovsk oblasts. Ukrainian drones hit back at the Lukoil refinery in Kstovo and a railway bridge near Stanytsia Luhanska. European officials read the intensified bombing as a sign Russia is struggling militarily and economically, not a sign of strength.</p>
         <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
@@ -278,6 +333,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Front nearly stalemated; casualty ratio now ~8:1 against Russia</h3></div>
+      <div class="byline">CSIS, CFR</div>
       <div class="detail">
         <p>Russia's ground advance has slowed to some of the lowest rates of any war in the past century — roughly 50m/day near Kostiantynivka, 70m/day near Pokrovsk, 90m/day near Sloviansk. Russian monthly casualties (30,000+) now likely exceed its recruitment (about 27,000/month), pushing the casualty ratio to near 8:1 against Russia in H1 2026. Ukrainian forces raised a flag over the Kinburn Spit for the first time since March 2022.</p>
         <p class="src">Source: CSIS, CFR Global Conflict Tracker</p>
@@ -286,6 +342,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>ISW: Russian summer offensive underperforming</h3></div>
+      <div class="byline">Institute for the Study of War</div>
       <div class="detail">
         <p>The Institute for the Study of War assesses that Russia's spring-summer 2026 offensive has failed to achieve operationally significant gains, with June's rate of advance a fraction of June 2025's — consistent with the stalled-front picture above.</p>
         <p class="src">Source: Institute for the Study of War</p>
@@ -295,10 +352,11 @@
     <p class="note">Sourced from wire services and ISW's daily assessments — chosen over partisan commentary for the strongest track record on this conflict. French and Spanish items above reflect Le Monde, Libération, and El Mundo's own reporting/casualty figures, which can differ slightly from wire tallies as stories develop.</p>
   </div>
 
-  <div class="section">
+  <div class="section" id="markets">
     <h2>Markets &amp; Finance</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">new</span><h3>Christine Lagarde considera dejar el BCE para "jugar un papel" en las presidenciales francesas</h3></div>
+      <div class="byline">El Mundo</div>
       <div class="detail">
         <p>La presidenta del BCE dijo en una entrevista a Les Echos que podría abandonar su cargo antes de octubre de 2027 para intervenir en las presidenciales francesas de abril-mayo 2027, alegando que Europa necesita "una voz europea" en el debate. La declaración llega justo antes del fallo, el 7 de julio, sobre la apelación de Marine Le Pen contra su inhabilitación de cinco años.</p>
         <p class="src">Fuente: El Mundo</p>
@@ -307,6 +365,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Dow hits record on strong session before the holiday</h3></div>
+      <div class="byline">CNBC, Saxo Bank</div>
       <div class="detail">
         <p>The Dow rose 539 points (+1.03%) to 52,844 on July 2, led by Apple, McDonald's and Disney. The Nasdaq 100 slipped 0.8% on chip-valuation worries — Micron -7%, Applied Materials -7.4%, AMD -4.3% — as investors questioned whether AI optimism has pushed chip valuations too far. Europe rallied on healthcare and financials; Asia rallied too.</p>
         <p class="src">Source: CNBC, Saxo Bank Market Quick Take</p>
@@ -315,6 +374,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>June jobs report shows a softening US labor market</h3></div>
+      <div class="byline">Saxo Bank</div>
       <div class="detail">
         <p>Payrolls rose just 57,000, well below the 113,000 forecast. Unemployment actually fell to 4.2%, but mainly because 720,000 people left the labor force rather than because hiring picked up — a distinction that matters for reading the headline rate.</p>
         <p class="src">Source: Saxo Bank Market Quick Take</p>
@@ -335,7 +395,7 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="atlas">
     <h2>Atlas Watch — Defense &amp; Test-Systems Sector</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">no direct mention</span><h3>Inga offentliga omnämnanden av ATLAS Sweden AB idag</h3></div>
@@ -345,6 +405,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sverige inleder förhandlingar om köp av fyra franska fregatter</h3></div>
+      <div class="byline">Defense News / Breaking Defense</div>
       <div class="detail">
         <p>Regeringen har gett FMV i uppdrag att inleda förhandlingar om att anskaffa fyra fregatter från franska Naval Group, med leverans mellan 2030 och 2034.</p>
         <p class="src">Källa: Defense News / Breaking Defense</p>
@@ -353,6 +414,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Sverige godkänner luftvärnsprogram för territoriellt försvar värt 1,6 miljarder dollar</h3></div>
+      <div class="byline">Army Recognition</div>
       <div class="detail">
         <p>Korträckviddigt luftvärn ska sättas in för att skydda svenska städer och kritisk infrastruktur — en upphandlingsvåg som ligger nära det område inom testledningssystem som ATLAS verkar i.</p>
         <p class="src">Källa: Army Recognition</p>
@@ -361,6 +423,7 @@
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Nato utser anläggning i Östergötland till DIANA-acceleratorplats</h3></div>
+      <div class="byline">TURDEF</div>
       <div class="detail">
         <p>LEAD-inkubatorn i Östergötland har utsetts till en acceleratorplats i Natos innovationsprogram DIANA (Defence Innovation Accelerator for the North Atlantic) — en finansierings- och samarbetsväg värd att bevaka för svenska försvarstekniska bolag.</p>
         <p class="src">Källa: TURDEF</p>
@@ -369,7 +432,7 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="columnists">
     <h2>Columnists</h2>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3><span class="columnist-name">Johan Hakelius</span> — Fokus</h3></div>
@@ -438,7 +501,7 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" id="watchlist">
     <h2>Watchlist</h2>
     <p class="note">Actively checking: Le Figaro, Le Monde, Libération · Svenska Dagbladet, Dagens Nyheter, Expressen, Aftonbladet · Financial Times, Washington Post, New York Times, USA Today, Wall Street Journal · El País, El Mundo · Haaretz, Jerusalem Post — plus other sources as needed. Headlines and article text are kept in their original language when that language is Swedish, French, Spanish, or English; otherwise translated to English. Every expanded item includes a "Read full article" link to the original source when a specific article was found; otherwise it links to the outlet's site.</p>
   </div>
@@ -454,6 +517,15 @@
   document.querySelectorAll('.article-head').forEach(head => {
     head.addEventListener('click', () => {
       head.closest('.article').classList.toggle('open');
+    });
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
     });
   });
 </script>
