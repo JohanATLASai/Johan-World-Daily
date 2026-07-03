@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- redeploy trigger 2026-07-03 -->
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -143,6 +141,17 @@
     padding: 8px 10px;
     border-left: 3px solid #999;
   }
+  .readmore {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    margin-top: 2px;
+  }
+  .readmore:hover { color: #555; border-color: #555; }
 </style>
 </head>
 <body>
@@ -151,14 +160,14 @@
   <h1>Johan World Daily</h1>
   <div class="sub">
     <span id="dateline">Friday, July 3, 2026 — Personal Edition for Johan</span>
-    <span id="lastUpdated">Last refreshed: 2026-07-03, late afternoon</span>
+    <span id="lastUpdated">Last refreshed: 2026-07-03, evening</span>
   </div>
 </div>
 
 <div class="toolbar">
   <button class="refresh" id="claudeRefreshBtn">Ask Claude to refresh</button>
   <button class="refresh" id="reloadBtn" style="background-color:#8a8375;">Reload page</button>
-  <span class="status" id="statusText">Click a headline to expand it in place. "Ask Claude to refresh" opens Claude Desktop with a refresh request ready to send (Mac only for now).</span>
+  <span class="status" id="statusText">Click a headline for a summary. Use "Read full article" inside for the complete piece. "Ask Claude to refresh" opens Claude Desktop (Mac only for now).</span>
 </div>
 
 <div class="layout">
@@ -166,10 +175,35 @@
   <div class="section">
     <h2>World &amp; Geopolitics</h2>
     <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>«Nous sommes en deuil, mais nous restons debout» : l'Iran enterre l'ancien guide suprême</h3></div>
+      <div class="detail">
+        <p>Iran a débuté samedi une semaine de funérailles nationales pour Ali Khamenei, tué le 28 février dans une frappe conjointe israélo-américaine qui a déclenché la guerre au Moyen-Orient. Le cortège traverse Téhéran, Qom et Machhad, où l'enterrement doit avoir lieu le 9 juillet ; les autorités attendent jusqu'à 20 millions de participants rien qu'à Téhéran, davantage qu'aux obsèques de Khomeiny en 1989.</p>
+        <p class="src">Source: Le Figaro</p>
+        <a class="readmore" href="https://www.lefigaro.fr/international/nous-sommes-en-deuil-mais-nous-restons-debout-l-iran-enterre-finalement-l-ancien-guide-supreme-ali-khamenei-20260703" target="_blank" rel="noopener">Read full article →</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>La Russie prépare une attaque sur la Pologne pour «provoquer» l'Otan, selon les États-Unis</h3></div>
+      <div class="detail">
+        <p>Washington avertit que Moscou planifierait une action contre la Pologne destinée à tester la réaction de l'Otan. En parallèle, la Lituanie souhaite intégrer la «dissuasion nucléaire» de l'Alliance face à la menace russe sur le flanc oriental.</p>
+        <p class="src">Source: Le Figaro</p>
+        <a class="readmore" href="https://www.lefigaro.fr/international/la-russie-prepare-une-attaque-sur-la-pologne-pour-provoquer-l-otan-selon-les-etats-unis-20260703" target="_blank" rel="noopener">Read full article →</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>Merz exhibe su apoyo a los países bálticos ante la amenaza rusa en el flanco oriental de la OTAN</h3></div>
+      <div class="detail">
+        <p>El canciller alemán Friedrich Merz reforzó su respaldo a los estados bálticos frente a la presión rusa, en un gesto que se suma a las señales de Vilna y Varsovia sobre un flanco oriental cada vez más tenso.</p>
+        <p class="src">Fuente: El País</p>
+        <a class="readmore" href="https://elpais.com/internacional/2026-07-03/merz-exhibe-su-apoyo-a-los-paises-balticos-ante-la-amenaza-rusa-en-el-flanco-oriental-de-la-otan.html" target="_blank" rel="noopener">Leer el artículo completo →</a>
+      </div>
+    </div>
+    <div class="article">
       <div class="article-head"><span class="caret">▸</span><h3>Gulf tensions ease "for now" after Israel-Iran exchange</h3></div>
       <div class="detail">
         <p>Israel and Iran exchanged missile strikes before both sides said they would halt attacks "for now." The Strait of Hormuz standoff is structural — rooted in the underlying regional rivalry rather than this one exchange — so analysts don't expect it resolved by a pause alone.</p>
         <p class="src">Source: World Economic Forum, Geopolitical Monitor</p>
+        <a class="readmore" href="https://www.weforum.org/geopolitics/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -177,6 +211,7 @@
       <div class="detail">
         <p>Meetings between Putin and Xi underscored the durability of their partnership and a shared push toward a more multipolar order. Myanmar is emerging as a fresh arena of China-India competition, shown by dueling state visits from both countries.</p>
         <p class="src">Source: Geopolitical Futures</p>
+        <a class="readmore" href="https://geopoliticalfutures.com/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -184,6 +219,23 @@
       <div class="detail">
         <p>Europe is confronting fallout from Chinese overcapacity in EVs, wind components, solar, and semiconductors, straining an already fragmented EU political response. It's one of several forces — alongside a Middle East truce and energy-driven inflation — shaping geopolitical risk this quarter.</p>
         <p class="src">Source: Lazard Research</p>
+        <a class="readmore" href="https://www.lazard.com/research-insights/" target="_blank" rel="noopener">Read full article →</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>'Political systems cannot sustain it': Turkish FM calls for sanctions on Israel</h3></div>
+      <div class="detail">
+        <p>Turkey's foreign minister renewed calls for sanctions against Israel; Israeli minister Gideon Sa'ar retaliated sharply. It's the latest sign of an increasingly hostile Turkey-Israel relationship, part of a wider realignment across the region since the Iran war.</p>
+        <p class="src">Source: Jerusalem Post</p>
+        <a class="readmore" href="https://www.jpost.com/middle-east/article-901311" target="_blank" rel="noopener">Read full article →</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>1,000 Days After Oct. 7, Israelis Keep Stepping Up While Their Politicians Don't</h3></div>
+      <div class="detail">
+        <p>Marking 1,000 days since October 7, protesters displayed photos of hostages killed since the massacre at sites across Israel, renewing calls for a state commission of inquiry into government failures — commentary on the gap between public civic energy and political accountability.</p>
+        <p class="src">Source: Haaretz</p>
+        <a class="readmore" href="https://www.haaretz.com/israel-news/2026-07-03/ty-article-magazine/1-000-days-after-oct-7-israeli-public-keeps-stepping-up-while-politicians-dont/0000019f-26c3-de0a-a99f-f6e3997f0000" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
   </div>
@@ -191,10 +243,27 @@
   <div class="section">
     <h2>Ukraine War</h2>
     <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Au lendemain de l'attaque meurtrière de Kiev, l'ONU regrette que «les civils subissent davantage»</h3></div>
+      <div class="detail">
+        <p>Au moins 30 personnes ont été tuées à Kiev dans l'attaque menée par l'armée russe dans la nuit du 1er au 2 juillet — la plus massive depuis le début de la guerre selon le maire Vitali Klitschko. L'ONU déplore que les civils subissent toujours davantage de destructions ; Zelensky a qualifié l'attaque de délibérément dirigée contre des cibles civiles.</p>
+        <p class="src">Sources : Le Monde, Libération</p>
+        <a class="readmore" href="https://www.lemonde.fr/international/live/2026/07/03/en-direct-guerre-en-ukraine-au-lendemain-de-l-attaque-meurtriere-de-kiev-l-onu-regrette-que-les-civils-subissent-davantage-de-destructions-de-douleur_6716525_3210.html" target="_blank" rel="noopener">Lire l'article complet →</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-head"><span class="caret">▸</span><h3>Moscú se ensaña de nuevo con Kiev con un ataque masivo de misiles y drones</h3></div>
+      <div class="detail">
+        <p>Un nuevo bombardeo masivo ruso sobre Kiev dejó al menos varias decenas de muertos, según el recuento citado por la prensa española, en la que ya se describe como una de las noches más duras para la capital ucraniana desde el inicio de la invasión.</p>
+        <p class="src">Fuente: El Mundo</p>
+        <a class="readmore" href="https://www.elmundo.es/internacional/2026/07/02/6a45f29ae4d4d83d0c8b4592.html" target="_blank" rel="noopener">Leer el artículo completo →</a>
+      </div>
+    </div>
+    <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Ukraine launches largest drone strike of the war on Moscow</h3></div>
       <div class="detail">
         <p>Ukraine hit the Dubna satellite communications center and further damaged an oil refinery struck two days earlier. Seventeen people were injured and hundreds of flights were suspended at Moscow airports. Separately, the EU released a further $4.44bn tranche of its $101bn loan program for Ukrainian drone technology.</p>
         <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
+        <a class="readmore" href="https://www.cfr.org/global-conflict-tracker" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -202,6 +271,7 @@
       <div class="detail">
         <p>A Russian air attack overnight damaged more than 30 sites in Kyiv, killing at least 20 people and injuring 90 more, with further strikes in Poltava and Dnipropetrovsk oblasts. Ukrainian drones hit back at the Lukoil refinery in Kstovo and a railway bridge near Stanytsia Luhanska. European officials read the intensified bombing as a sign Russia is struggling militarily and economically, not a sign of strength.</p>
         <p class="src">Source: Washington Post, CFR Global Conflict Tracker</p>
+        <a class="readmore" href="https://www.washingtonpost.com/world/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -209,6 +279,7 @@
       <div class="detail">
         <p>Russia's ground advance has slowed to some of the lowest rates of any war in the past century — roughly 50m/day near Kostiantynivka, 70m/day near Pokrovsk, 90m/day near Sloviansk. Russian monthly casualties (30,000+) now likely exceed its recruitment (about 27,000/month), pushing the casualty ratio to near 8:1 against Russia in H1 2026. Ukrainian forces raised a flag over the Kinburn Spit for the first time since March 2022.</p>
         <p class="src">Source: CSIS, CFR Global Conflict Tracker</p>
+        <a class="readmore" href="https://www.csis.org/programs/international-security-program" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -216,18 +287,28 @@
       <div class="detail">
         <p>The Institute for the Study of War assesses that Russia's spring-summer 2026 offensive has failed to achieve operationally significant gains, with June's rate of advance a fraction of June 2025's — consistent with the stalled-front picture above.</p>
         <p class="src">Source: Institute for the Study of War</p>
+        <a class="readmore" href="https://www.understandingwar.org/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
-    <p class="note">Sourced from wire services and ISW's daily assessments — chosen over partisan commentary for the strongest track record on this conflict.</p>
+    <p class="note">Sourced from wire services and ISW's daily assessments — chosen over partisan commentary for the strongest track record on this conflict. French and Spanish items above reflect Le Monde, Libération, and El Mundo's own reporting/casualty figures, which can differ slightly from wire tallies as stories develop.</p>
   </div>
 
   <div class="section">
     <h2>Markets &amp; Finance</h2>
     <div class="article">
+      <div class="article-head"><span class="caret">▸</span><span class="flag">new</span><h3>Christine Lagarde considera dejar el BCE para "jugar un papel" en las presidenciales francesas</h3></div>
+      <div class="detail">
+        <p>La presidenta del BCE dijo en una entrevista a Les Echos que podría abandonar su cargo antes de octubre de 2027 para intervenir en las presidenciales francesas de abril-mayo 2027, alegando que Europa necesita "una voz europea" en el debate. La declaración llega justo antes del fallo, el 7 de julio, sobre la apelación de Marine Le Pen contra su inhabilitación de cinco años.</p>
+        <p class="src">Fuente: El Mundo</p>
+        <a class="readmore" href="https://www.elmundo.es/internacional/2026/07/03/6a47e06f21efa074228b45a2.html" target="_blank" rel="noopener">Leer el artículo completo →</a>
+      </div>
+    </div>
+    <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">updated</span><h3>Dow hits record on strong session before the holiday</h3></div>
       <div class="detail">
         <p>The Dow rose 539 points (+1.03%) to 52,844 on July 2, led by Apple, McDonald's and Disney. The Nasdaq 100 slipped 0.8% on chip-valuation worries — Micron -7%, Applied Materials -7.4%, AMD -4.3% — as investors questioned whether AI optimism has pushed chip valuations too far. Europe rallied on healthcare and financials; Asia rallied too.</p>
         <p class="src">Source: CNBC, Saxo Bank Market Quick Take</p>
+        <a class="readmore" href="https://www.cnbc.com/markets/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -235,6 +316,7 @@
       <div class="detail">
         <p>Payrolls rose just 57,000, well below the 113,000 forecast. Unemployment actually fell to 4.2%, but mainly because 720,000 people left the labor force rather than because hiring picked up — a distinction that matters for reading the headline rate.</p>
         <p class="src">Source: Saxo Bank Market Quick Take</p>
+        <a class="readmore" href="https://www.home.saxo/insights/market-quick-take" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
@@ -264,6 +346,7 @@
       <div class="detail">
         <p>Regeringen har gett FMV i uppdrag att inleda förhandlingar om att anskaffa fyra fregatter från franska Naval Group, med leverans mellan 2030 och 2034.</p>
         <p class="src">Källa: Defense News / Breaking Defense</p>
+        <a class="readmore" href="https://www.defensenews.com/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
@@ -271,6 +354,7 @@
       <div class="detail">
         <p>Korträckviddigt luftvärn ska sättas in för att skydda svenska städer och kritisk infrastruktur — en upphandlingsvåg som ligger nära det område inom testledningssystem som ATLAS verkar i.</p>
         <p class="src">Källa: Army Recognition</p>
+        <a class="readmore" href="https://www.armyrecognition.com/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
@@ -278,6 +362,7 @@
       <div class="detail">
         <p>LEAD-inkubatorn i Östergötland har utsetts till en acceleratorplats i Natos innovationsprogram DIANA (Defence Innovation Accelerator for the North Atlantic) — en finansierings- och samarbetsväg värd att bevaka för svenska försvarstekniska bolag.</p>
         <p class="src">Källa: TURDEF</p>
+        <a class="readmore" href="https://www.turdef.com/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
   </div>
@@ -289,6 +374,7 @@
       <div class="detail">
         <p>Dagens krönika tar en satirisk vinkel på Sveriges nya förbud mot kusinäktenskap (som gäller från 1 juli), med ett resonemang om "ecosexuals" som vad han kallar progressivismens nästa frontlinje.</p>
         <p class="src">Källa: Fokus (bakom Fokus egen åtkomst)</p>
+        <a class="readmore" href="https://www.fokus.se/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
@@ -296,55 +382,63 @@
       <div class="detail">
         <p>Senaste krönikan (14 juni) handlar om efterspelet av Expressens rapportering om Vänsterpartiets uteslutna lokalpolitiker. Guillou menar att "avslöjandena" inte håller för en närmare granskning — de flesta av de utpekade visades aldrig stödja Hamas eller uttrycka antisemitism — och att partiets massuteslutningar speglar panik snarare än ett genomtänkt agerande.</p>
         <p class="src">Källa: Aftonbladet</p>
+        <a class="readmore" href="https://www.aftonbladet.se/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Dan Korn</span> — Göteborgs-Posten</h3></div>
       <div class="detail">
         <p>Tillagd i bevakningslistan. Ingen ny text hittades i dagens sökning — GP:s arkivindex ligger efter. Nästa uppdatering kollar igen.</p>
+        <a class="readmore" href="https://www.gp.se/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">PM Nilsson</span> — Dagens Industri</h3></div>
       <div class="detail">
         <p>Tillagd i bevakningslistan. Ingen ny krönika hittades idag; han skriver enligt uppgift varje vecka (torsdagar).</p>
+        <a class="readmore" href="https://www.di.se/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">tracking</span><h3><span class="columnist-name">Alice Teodorescu Måwe</span> — GP / Expressen</h3></div>
       <div class="detail">
         <p>Tillagd i bevakningslistan. Ingen ny text hittades i dagens sökning; nästa uppdatering kollar igen.</p>
+        <a class="readmore" href="https://www.expressen.se/" target="_blank" rel="noopener">Läs hela artikeln →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Nicolas Baverez</span> — Le Figaro (France)</h3></div>
       <div class="detail">
         <p>Trial addition for geographic/political breadth: economically liberal columnist at Le Figaro. No specific July piece surfaced yet. Let me know what you think once you've read one.</p>
+        <a class="readmore" href="https://www.lefigaro.fr/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Bret Stephens</span> — New York Times (US)</h3></div>
       <div class="detail">
         <p>Trial addition: conservative, Trump-skeptical columnist. Most recent found was "Trump's Titanic Insecurities Are Sinking Us" (June 18). Let me know what you think once you've read one.</p>
+        <a class="readmore" href="https://www.nytimes.com/column/bret-stephens" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Arcadi Espada</span> — El Mundo (Spain)</h3></div>
       <div class="detail">
         <p>Trial addition: liberal commentator, often critical across the political spectrum. Let me know what you think once you've read one.</p>
+        <a class="readmore" href="https://www.elmundo.es/" target="_blank" rel="noopener">Leer el artículo completo →</a>
       </div>
     </div>
     <div class="article">
       <div class="article-head"><span class="caret">▸</span><span class="flag">new pick</span><h3><span class="columnist-name">Ruthie Blum</span> — Jerusalem Post (Israel)</h3></div>
       <div class="detail">
         <p>Trial addition: conservative contributing editor. Let me know what you think once you've read one.</p>
+        <a class="readmore" href="https://www.jpost.com/" target="_blank" rel="noopener">Read full article →</a>
       </div>
     </div>
   </div>
 
   <div class="section">
     <h2>Watchlist</h2>
-    <p class="note">Actively checking: Le Figaro, Le Monde, Libération · Svenska Dagbladet, Dagens Nyheter, Expressen, Aftonbladet · Financial Times, Washington Post, New York Times, USA Today, Wall Street Journal · El País, El Mundo · Haaretz, Jerusalem Post — plus other sources as needed. Headlines and article text are kept in their original language when that language is Swedish, French, Spanish, or English; otherwise translated to English.</p>
+    <p class="note">Actively checking: Le Figaro, Le Monde, Libération · Svenska Dagbladet, Dagens Nyheter, Expressen, Aftonbladet · Financial Times, Washington Post, New York Times, USA Today, Wall Street Journal · El País, El Mundo · Haaretz, Jerusalem Post — plus other sources as needed. Headlines and article text are kept in their original language when that language is Swedish, French, Spanish, or English; otherwise translated to English. Every expanded item includes a "Read full article" link to the original source when a specific article was found; otherwise it links to the outlet's site.</p>
   </div>
 
 </div>
